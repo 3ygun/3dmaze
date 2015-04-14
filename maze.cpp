@@ -1,25 +1,28 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 
-void setupMaze(char[][][]);
-void printMaze(char[][][], int[]);
+void setupMaze(char[][3][3]);
+int printMaze(char[][3][3], int[]);
 
 int main(void) {
-	char maze[3][3][3];
+	char maze[3][3][3];				// z, y, x
 	int location[3] = {1, 1, 1};
+	int win = 0;
+	char move;
 
-	setupMaze(maze);
+	while(!win) {
+		setupMaze(maze);
 
-	printMaze(maze);
-
-
-
+		win = printMaze(maze, location);
+		cin >> move;
+	}
 }
 
-// z, y, x
 
-void setupMaze(char maze[][][]) {
+
+void setupMaze(char maze[][3][3]) {
 	// z, y, x
 	// z = 0
 	maze[0][0][0] = '+';
@@ -56,12 +59,13 @@ void setupMaze(char maze[][][]) {
 
 }
 
-int printMaze(char maze[][][], int location[]) {
+int printMaze(char maze[][3][3], int location[]) {
 	int winner = 0;
-	int dim = 3; // Dimensions of maze
+	int dim = 3; 	// Dimensions of maze
+	int hdim = 1;	// Half of the Dimension
 
 	// Find all of the edges
-	// location[] = x, y, z
+	// location[] = z, y, x
 	int zmin = location[0] - 1;
 	int zmax = location[0] + 1;
 	int ymin = location[1] - 1;
@@ -74,7 +78,7 @@ int printMaze(char maze[][][], int location[]) {
 		cout << "winner! \n \n";
 		winner = 1;
 	} else {
-		// xside & zside
+		// xside & zside >> single row at a time
 		for (int i = 0; i < dim; ++i) {
 			// Create x point
 			int xz = zmin + i;
@@ -86,20 +90,65 @@ int printMaze(char maze[][][], int location[]) {
 			int zy = ymax - i;
 			int zx = xmin;
 
-			cout << ":   ";
+			// Print spacer
+			cout << ":    ";
 
-			for (int j = 0; j < dim; ++j) {
-				
-
-				cout << " " << maze[][]
-
-
-
-
-
-				xx++;
-				zx++;
+			// Print x row points
+			for (int b = 0; b < dim; ++b) {
+				cout << maze[xz][xy][(xx + b)];
 			}
+
+			// Print z row points
+			cout << "    ";
+			for (int b = 0; b < dim; ++b) {
+				cout << maze[zz][zy][(zx + b)];
+			}
+
+			// End row
+			cout << endl;
+		}
+
+		// Spacer
+		cout << ":" << endl << ":" << endl;
+
+		for (int i = 0; i < dim; ++i) {
+			// Create location
+			int cz = location[0] - hdim;
+			int cy = location[1] - hdim;
+			int cx = location[2] - hdim;
+
+
+			// Create y point
+			int yz = zmin + i;
+			int yy = ymin;
+			int yx = location[2];
+
+			// Print spacer
+			cout << ":  ";
+
+			// Print location
+			switch (i) {
+			case 0:
+				cout << setw(13) << left << "  ( z,  y,  x)";
+				break;
+			case 1:
+				cout << setw(13) << left << " @(" << cz << ", " << cy << ", " << cx << ")";
+				break;
+			case 2:
+				cout << setw(13) << left << "achieve +-" << hdim;
+				break;
+			default:
+				cout << "Error: Bad case";
+				break;
+			}
+
+			// Print y row points
+			for (int b = 0; b < dim; ++b) {
+				cout << maze[yz][(yy + b)][yx];
+			}
+
+			// End row
+			cout << endl;
 		}
 	}
 

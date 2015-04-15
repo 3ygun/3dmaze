@@ -127,15 +127,26 @@ int printMaze(char maze[][3][3], int location[]) {
 			cout << endl;
 		}
 
-		// Spacer
+		// Spacer & Headers
 		cout << ":" << endl;
-		cout << ":           Y" << endl;
+		cout << ":   / \\     Y" << endl;
 
 		for (int i = 0; i < dim; ++i) {
 			// Create y point
 			int yz = zmin + i;
 			int yy = ymin;
 			int yx = location[2];
+
+			// Print diagram top & row start
+			cout << ": ";
+			if ( i==0 ) {
+				cout << " / Z \\ ";
+			} else if ( i==1 ) {
+				cout << "|\\ Z /|";
+			} else { // ( i==2 )
+				cout << "| \\ / |";
+			}
+			cout << "   ";
 
 			// Print y row points
 			for (int b = 0; b < dim; ++b) {
@@ -145,6 +156,11 @@ int printMaze(char maze[][3][3], int location[]) {
 			// End row
 			cout << endl;
 		}
+
+		// Print bottom of diagram
+		cout << ": |XX|YY|" << endl;
+		cout << ":  \\ | / " << endl;
+		cout << ":   \\|/  " << endl;
 	}
 
 	return winner;

@@ -144,7 +144,7 @@ int printMaze(char maze[][theDim][theDim], int location[]) {
 		cout << ": Current position in ( z, y, x) is @(" << cz << ", " << cy << ", " << cx << ")" << endl;
 		cout << ": Get to +-" << hdim << " on any axis to escape!" << endl;
 		cout << ":" << endl;
-		cout << ":    X      Z" << endl;
+		cout << ":    Y      Z" << endl;
 
 
 
@@ -183,7 +183,7 @@ int printMaze(char maze[][theDim][theDim], int location[]) {
 
 		// Spacer & Headers
 		cout << ":" << endl;
-		cout << ":   / \\     Y" << endl;
+		cout << ":   / \\     X" << endl;
  
 		for (int i = 0; i < dim; ++i) {
 			// Create y point

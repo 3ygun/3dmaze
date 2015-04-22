@@ -2,7 +2,7 @@
 #include <iomanip>
 using namespace std;
 
-#define theDim 5
+#define theDim 3
 #define thePlayer '$'
 
 void setupMaze(char[][theDim][theDim]);
@@ -77,149 +77,46 @@ void setupMaze(char maze[][theDim][theDim]) {
 	maze[0][0][0] = '+';
 	maze[0][0][1] = '+';
 	maze[0][0][2] = '+';
-	maze[0][0][3] = '+';
-	maze[0][0][4] = '+';
 	maze[0][1][0] = '+';
 	maze[0][1][1] = '+';
 	maze[0][1][2] = '+';
-	maze[0][1][3] = '+';
-	maze[0][1][4] = '+';
 	maze[0][2][0] = '+';
 	maze[0][2][1] = '+';
 	maze[0][2][2] = '+';
-	maze[0][2][3] = '+';
-	maze[0][2][4] = '+';
-	maze[0][3][0] = '+';
-	maze[0][3][1] = '+';
-	maze[0][3][2] = '+';
-	maze[0][3][3] = '+';
-	maze[0][3][4] = '+';
-	maze[0][4][0] = '+';
-	maze[0][4][1] = '+';
-	maze[0][4][2] = '+';
-	maze[0][4][3] = '+';
-	maze[0][4][4] = '+';
 
 	// z = 1
 	maze[1][0][0] = '+';
-	maze[1][0][1] = '+';
+	maze[1][0][1] = ' ';
 	maze[1][0][2] = '+';
-	maze[1][0][3] = '+';
-	maze[1][0][4] = '+';
-	maze[1][1][0] = ' ';
-	maze[1][1][1] = ' ';
-	maze[1][1][2] = ' ';
-	maze[1][1][3] = ' ';
-	maze[1][1][4] = '+';
+	maze[1][1][0] = '+';
+	maze[1][1][1] = thePlayer;
+	maze[1][1][2] = '+';
 	maze[1][2][0] = '+';
-	maze[1][2][1] = ' ';
-	maze[1][2][2] = ' ';
-	maze[1][2][3] = ' ';
-	maze[1][2][4] = '+';
-	maze[1][3][0] = '+';
-	maze[1][3][1] = ' ';
-	maze[1][3][2] = ' ';
-	maze[1][3][3] = ' ';
-	maze[1][3][4] = '+';
-	maze[1][4][0] = '+';
-	maze[1][4][1] = '+';
-	maze[1][4][2] = '+';
-	maze[1][4][3] = '+';
-	maze[1][4][4] = '+';
+	maze[1][2][1] = '+';
+	maze[1][2][2] = '+';
 
 	// z = 2
 	maze[2][0][0] = '+';
 	maze[2][0][1] = '+';
 	maze[2][0][2] = '+';
-	maze[2][0][3] = '+';
-	maze[2][0][4] = '+';
 	maze[2][1][0] = '+';
-	maze[2][1][1] = ' ';
-	maze[2][1][2] = ' ';
-	maze[2][1][3] = ' ';
-	maze[2][1][4] = '+';
+	maze[2][1][1] = '+';
+	maze[2][1][2] = '+';
 	maze[2][2][0] = '+';
-	maze[2][2][1] = ' ';
-	maze[2][2][2] = thePlayer;
-	maze[2][2][3] = ' ';
-	maze[2][2][4] = '+';
-	maze[2][3][0] = '+';
-	maze[2][3][1] = ' ';
-	maze[2][3][2] = ' ';
-	maze[2][3][3] = ' ';
-	maze[2][3][4] = '+';
-	maze[2][4][0] = '+';
-	maze[2][4][1] = '+';
-	maze[2][4][2] = '+';
-	maze[2][4][3] = '+';
-	maze[2][4][4] = '+';
-
-	// z = 3
-	maze[3][0][0] = '+';
-	maze[3][0][1] = '+';
-	maze[3][0][2] = '+';
-	maze[3][0][3] = '+';
-	maze[3][0][4] = '+';
-	maze[3][1][0] = '+';
-	maze[3][1][1] = ' ';
-	maze[3][1][2] = ' ';
-	maze[3][1][3] = ' ';
-	maze[3][1][4] = '+';
-	maze[3][2][0] = '+';
-	maze[3][2][1] = ' ';
-	maze[3][2][2] = ' ';
-	maze[3][2][3] = ' ';
-	maze[3][2][4] = '+';
-	maze[3][3][0] = '+';
-	maze[3][3][1] = ' ';
-	maze[3][3][2] = ' ';
-	maze[3][3][3] = ' ';
-	maze[3][3][4] = '+';
-	maze[3][4][0] = '+';
-	maze[3][4][1] = '+';
-	maze[3][4][2] = '+';
-	maze[3][4][3] = '+';
-	maze[3][4][4] = '+';
-
-	// z = 4
-	maze[4][0][0] = '+';
-	maze[4][0][1] = '+';
-	maze[4][0][2] = '+';
-	maze[4][0][3] = '+';
-	maze[4][0][4] = '+';
-	maze[4][1][0] = '+';
-	maze[4][1][1] = '+';
-	maze[4][1][2] = '+';
-	maze[4][1][3] = '+';
-	maze[4][1][4] = '+';
-	maze[4][2][0] = '+';
-	maze[4][2][1] = '+';
-	maze[4][2][2] = '+';
-	maze[4][2][3] = '+';
-	maze[4][2][4] = '+';
-	maze[4][3][0] = '+';
-	maze[4][3][1] = '+';
-	maze[4][3][2] = '+';
-	maze[4][3][3] = '+';
-	maze[4][3][4] = '+';
-	maze[4][4][0] = '+';
-	maze[4][4][1] = '+';
-	maze[4][4][2] = '+';
-	maze[4][4][3] = '+';
-	maze[4][4][4] = '+';
+	maze[2][2][1] = '+';
+	maze[2][2][2] = '+';
 }
 
 void setupLocation(int location[]) {
-	location[0] = 2;
-	location[1] = 2;
-	location[2] = 2;
+	location[0] = 1;
+	location[1] = 1;
+	location[2] = 1;
 }
 
 int printMaze(char maze[][theDim][theDim], int location[]) {
 	int winner = 0;
 	int dim = theDim; 	// Dimensions of maze
-	int ddim = 3;
-	int hdim = (theDim) / 2;	// Half of the Dimension
+	int hdim = 1;	// Half of the Dimension
 
 	// Find all of the edges
 	// location[] = z, y, x
@@ -255,7 +152,7 @@ int printMaze(char maze[][theDim][theDim], int location[]) {
 		 *	Print Orthographic projection for z, y, x sides
 		 */
 		// xside & zside >> single row at a time
-		for (int i = 0; i < ddim; ++i) {
+		for (int i = 0; i < dim; ++i) {
 			// Create x point
 			int xz = zmin + i;
 			int xy = location[1];
@@ -270,13 +167,13 @@ int printMaze(char maze[][theDim][theDim], int location[]) {
 			cout << ":    ";
 
 			// Print x row points
-			for (int b = 0; b < ddim; ++b) {
+			for (int b = 0; b < dim; ++b) {
 				cout << maze[xz][xy][(xx + b)];
 			}
 
 			// Print z row points
 			cout << "    ";
-			for (int b = 0; b < ddim; ++b) {
+			for (int b = 0; b < dim; ++b) {
 				cout << maze[zz][zy][(zx + b)];
 			}
 
@@ -286,9 +183,9 @@ int printMaze(char maze[][theDim][theDim], int location[]) {
 
 		// Spacer & Headers
 		cout << ":" << endl;
-		cout << ":U  / \\     X" << endl;
+		cout << ":   / \\     X" << endl;
  
-		for (int i = 0; i < ddim; ++i) {
+		for (int i = 0; i < dim; ++i) {
 			// Create y point
 			int yz = zmin + i;
 			int yy = ymin;
@@ -306,7 +203,7 @@ int printMaze(char maze[][theDim][theDim], int location[]) {
 			cout << "   ";
 
 			// Print y row points
-			for (int b = 0; b < ddim; ++b) {
+			for (int b = 0; b < dim; ++b) {
 				cout << maze[yz][(yy + b)][yx];
 			}
 
@@ -316,9 +213,8 @@ int printMaze(char maze[][theDim][theDim], int location[]) {
 
 		// Print bottom of diagram
 		cout << ": |YY|XX|" << endl;
-		cout << ":L \\ | / I" << endl;
-		cout << ":D  \\|/  " << endl;
-		cout << ":   R O" << endl;
+		cout << ":  \\ | / " << endl;
+		cout << ":   \\|/  " << endl;
 		cout << ":" << endl;
 	}
 
@@ -335,7 +231,7 @@ void updateMaze(char maze[][theDim][theDim] , int location[], char move) {
 	switch (move) {
 		case 'u':
 			// Calculate the new coordinate
-			n = z - 1;
+			n = z + 1;
 
 			// Move the player if possible
 			if (maze[n][y][x] != '+') {
@@ -351,7 +247,7 @@ void updateMaze(char maze[][theDim][theDim] , int location[], char move) {
 			break;
 		case 'd':
 			// Calculate the new coordinate
-			n = z + 1;
+			n = z - 1;
 
 			// Move the player if possible
 			if (maze[n][y][x] != '+') {

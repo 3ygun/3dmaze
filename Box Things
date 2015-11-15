@@ -1,0 +1,61 @@
+
+
+
+    / \
+   /   \
+  /     \
+ /  Z Z  \
+|\   Z   /|
+| \     / |
+|  \   /  |
+|   \ /   |
+| X  |  Y |
+|  X | Y  |
+ \   |   /
+  \  |  /
+   \ | /
+    \|/
+
+
+
+  / \
+ / Z \ 
+ \ Z /
+ |\ /|
+ |X|Y|
+ \ | /
+  \|/
+
+1234567
+|XX|YY|
+
+  Z
+ ZZZ
+X Z Y
+XX YY
+ X Y
+
+
+
+    /\
+   /ZZ\
+  /ZZZZ\
+ /ZZZZZZ\
+|\ZZZZZZ/|
+|X\ZZZZ/Y|
+|XX\ZZ/YY|
+|XXX\/YYY|
+|XXX|YYYY|
+ \XX|YYY/
+  \X|YY/
+   \|Y/
+
+
+   
+  ZZZ
+ ZZZZZ 
+X ZZZ Y
+XX Z YY
+XXX YYY
+ XX YY
+  X Y
